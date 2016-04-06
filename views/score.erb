@@ -1,0 +1,12 @@
+<form action="" method="post" accept-charset="UTF-8">
+  <label for="word">Word</label>
+  <input type="text" name="game[word]" value="" id="word">
+
+  <input type="submit" value="Submit">
+</form>
+
+<p>
+  <% if @score %>
+    <%= @score %>
+  <% end %>
+</p>
