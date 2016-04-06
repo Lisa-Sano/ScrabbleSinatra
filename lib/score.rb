@@ -28,7 +28,9 @@ class Score
     word_score
   end
 
-  def self.score_many(array_of_words)
+  def self.score_many(list_of_words)
+    list_of_words.gsub!(",", "")
+    array_of_words = list_of_words.split(" ")
     word_hash = {}
 
     array_of_words.each do |word|
