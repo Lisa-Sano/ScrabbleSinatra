@@ -1,13 +1,14 @@
 <form action="" method="post" accept-charset="UTF-8">
-  <label for="word-list">Word List</label>
-  <textarea name="game[word_list]" value="" id="word-list"></textarea>
+  <label for="word-list">Enter some words!</label>
+  <textarea class="from-user" name="game[word_list]" value="" id="word-list"></textarea>
 
   <input type="submit" value="Submit">
 </form>
 
-
-<% if @scores %>
-  <% @scores.each do |word, score| %>
-    <p><%= "#{word}: #{score}" %></p>
+<div class="result">
+  <% if @scores %>
+    <% @scores.each do |word, score| %>
+      <p><%= "#{word}: #{score}" %></p>
+    <% end %>
   <% end %>
-<% end %>
+</div>

@@ -1,10 +1,12 @@
 <form action="" method="post" accept-charset="UTF-8">
-  <label for="word">Word</label>
-  <input type="text" name="game[word]" value="" id="word">
+  <label for="word">Enter a word!</label>
+  <input class="from-user" type="text" name="game[word]" value="" id="word">
 
   <input type="submit" value="Submit">
 </form>
 
-<% if @score %>
-  <p><%= "#{@word}: #{@score}" %></p>
-<% end %>
+<div class="result">
+  <% if @score %>
+    <p><%= "#{@word}: #{@score}" %></p>
+  <% end %>
+</div>
