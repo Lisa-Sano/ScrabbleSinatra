@@ -12,16 +12,18 @@ class MyApp < Sinatra::Base
   end
 
   post '/score' do
-    @score = Score.score(params["game"]["word"])
+    @word = params["game"]["word"]
+    @score = Score.score(@word)
     erb :score
   end
 
   get '/score-many' do
-    erb :score_many
+    erb :score_many 
   end
 
   post '/score-many' do
-    @scores = Score.score_many(params["game"]["word_list"])
+    @words = params["game"]["word_list"]
+    @scores = Score.score_many(@words)
     erb :score_many
   end
 
