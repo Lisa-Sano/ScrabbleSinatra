@@ -6,12 +6,16 @@ html {
   background-color: #52527a;
   font-size: 16px;
   color: #e6b3ff;
+  min-height: 100%;
+  position: relative;
 }
 
 body {
   margin: 0;
   padding: 0;
 }
+
+
 
 
 /*********HEADER**********/
@@ -49,7 +53,7 @@ nav a:hover {
 /*********BODY***********/
 
 form {
-  padding: 0 3rem;
+  padding: 2rem 0;
   text-align: center;
 }
 
@@ -69,12 +73,31 @@ label {
   width: 25%;
 }
 
+.blank {
+  width: 100%;
+  min-height: 100%;
+}
+
 .result {
-  font-size: 2rem;
-  padding-top: 2rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
+table {
+  font-size: 1.5rem;
+  border-spacing: 3rem 0.5rem;
+  border: 1px solid black;
+  margin: 2rem auto;
+}
+
+th {
+  font-size: 1.7rem;
+  text-decoration: underline;
+}
+
+main {
+  margin-bottom: 100px;
+}
 
 /*********FOOTER**********/
 
@@ -82,10 +105,11 @@ footer {
   bottom: 0;
   font-size: 0.7rem;
   margin: 0 auto;
-  padding-bottom: 1rem;
+  padding: 2rem 0;
   position: absolute;
   text-align: center;
   width: 100%;
+  height: 100px;
 }
 
 footer p {
