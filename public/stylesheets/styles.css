@@ -8,6 +8,9 @@ html {
   color: #e6b3ff;
 }
 
+
+/*********HEADER**********/
+
 nav {
   text-align: center
 }
@@ -23,9 +26,27 @@ nav li {
 
 nav a {
   font-size: 1.5rem;
-  color: #99e6ff;
+  color: #33ccff;
+  text-decoration: none;
 }
 
 nav a:hover {
   color: #bb33ff;
+}
+
+
+/*********FOOTER**********/
+
+footer {
+  bottom: 0;
+  /*display: block;*/
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+footer p {
+  margin-bottom: 0.2rem;
 }
