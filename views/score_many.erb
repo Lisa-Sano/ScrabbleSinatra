@@ -1,12 +1,13 @@
 <form action="" method="post" accept-charset="UTF-8">
   <label for="word-list">Enter some words!</label>
+  <p>(separate words using spaces or commas)</p>
   <textarea class="from-user" name="game[word_list]" value="" id="word-list"></textarea>
 
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit!">
 </form>
 
-<div class="result">
-  <% if @scores %>
+<% if @scores %>
+  <div class="result">
     <table>
       <tr>
         <th>Word</th>
@@ -19,5 +20,17 @@
         </tr>
       <% end %>
     </table>
-  <% end %>
-</div>
+  </div>
+<% end %>
+
+
+<% if @letter_scores %>
+  <div class="breakdown">
+    <% @letter_scores.each do |word| %>
+      <p><% word.each do |letter_score| %>
+        <span><%= letter_score.first + ": " %>
+        <span class="score"><%= letter_score[1] %></span></span>
+      <% end %></p>
+    <% end %>
+  </div>
+<% end %>
