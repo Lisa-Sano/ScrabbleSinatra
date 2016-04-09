@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <%= "<link rel='stylesheet' type='text/css' href='#{@css}'>" if @css %>
     <title>Scrabble!</title>
   </head>
 
   <body>
     <header>
+      <h1>SCRABBLE</h1>
       <nav>
         <ul>
-          <li><a href="/">Go Home</a></li>
+          <li class="home"><a href="/">Go Home</a></li>
           <li><a href="/score">Score a word</a></li>
           <li><a href="/score-many">Score many words</a></li>
         </ul>
@@ -23,7 +27,7 @@
 
     <footer>
       <p>© 2016 Lisa Rolczynski</p>
-      <a href="mailto:lisa.sano@gmail.com?Subject=Hey%20Lisa" target="_top">Contact me!</a>
+      <a href="mailto:lisa.sano@gmail.com?Subject=Hey%20Lisa%20you%20so%20cool" target="_top">Contact me!</a>
     </footer>
   </body>
 </html>
