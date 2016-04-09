@@ -1,0 +1,12 @@
+h1 {
+  font-size: 8.5vw;
+  margin: 8rem auto;
+}
+
+li.home {
+  display: none;
+}
+
+nav a {
+  font-size: 2rem;
+}

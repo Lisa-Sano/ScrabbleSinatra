@@ -3,26 +3,36 @@
 }
 
 html {
-  background-color: #52527a;
   font-size: 16px;
-  color: #e6b3ff;
+  font-family: "Handlee";
   min-height: 100%;
   position: relative;
 }
 
 body {
+  /*background-color: #262626;*/
+  background: linear-gradient(#660066, #000); /* Standard syntax */
+  background-attachment: fixed;
+  color: #a6a6a6;
   margin: 0;
   padding: 0;
 }
 
 
-
-
 /*********HEADER**********/
+
+h1 {
+  font-size: 5vw;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 2rem;
+  text-align: center;
+  text-shadow: 4px 4px 5px #000;
+  padding-left: 2rem; /* doesn't look centered wtf */
+  width: 100%;
+}
 
 nav {
   text-align: center;
-  background-color: black;
 }
 
 nav ul {
@@ -46,7 +56,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #bb33ff;
+  color: #d9d9d9;
 }
 
 
@@ -67,10 +77,18 @@ label {
   text-shadow: 2px 2px 5px #000;
 }
 
+form > p {
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+}
+
 .from-user {
+  color: #c653c6;
   font-size: 2rem;
   text-align: center;
   width: 25%;
+  background-color: #262626;
 }
 
 .blank {
@@ -86,7 +104,7 @@ label {
 table {
   font-size: 1.5rem;
   border-spacing: 3rem 0.5rem;
-  border: 1px solid black;
+  border: 1px solid #4d4d4d;
   margin: 2rem auto;
 }
 
@@ -99,10 +117,24 @@ main {
   margin-bottom: 100px;
 }
 
+.breakdown {
+  text-align: center;
+  padding: 2rem;
+}
+
+span.score {
+  padding: 1rem 2rem 1rem 0.5rem;
+}
+
+.breakdown > p {
+  margin: 2rem 0;
+}
+
 /*********FOOTER**********/
 
 footer {
   bottom: 0;
+  color: #b300b3;
   font-size: 0.7rem;
   margin: 0 auto;
   padding: 2rem 0;
