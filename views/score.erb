@@ -2,11 +2,21 @@
   <label for="word">Enter a word!</label>
   <input class="from-user" type="text" name="game[word]" value="" id="word">
 
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit!">
 </form>
 
-<div class="result">
-  <% if @score %>
+<% if @score %>
+  <div class="result">
     <p><%= "#{@word}: #{@score}" %></p>
-  <% end %>
-</div>
+  </div>
+<% end %>
+
+
+<% if @letter_scores %>
+  <div class="breakdown">
+    <% @letter_scores.each do |letter| %>
+      <span><%= letter[0] + ": " %>
+      <%= letter[1] %></span>
+    <% end %>
+  </div>
+<% end %>
