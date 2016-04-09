@@ -12,28 +12,39 @@ class Score
 
   def self.not_a_word?(input_string)
     # if string contains punctuation or a number, it will not be nil
-    return false if /[\W[0-9]]/.match(input_string).nil?
+    return false if /[\W\d]/.match(input_string).nil?
     true
   end
 
   def self.score(word)
     # check if word is actually a word (not containing punctuation or numbers)
     return "that's not a word!" if self.not_a_word?(word)
-    word_score = 0
-    word = word.upcase
+
+    score_array = self.letter_score(word)
+    word_score = score_array.reduce(0) do |sum, set|
+      sum + set[1]
+    end
+      
+    word_score += 50 if word.length == 7
+
+    word_score
+  end
+
+  def self.letter_score(word)
+    letter_scores = []
+
+    word.upcase!
     letter_array = word.split(//)
 
     letter_array.each do |letter|
-      LETTER_SCORES.each do |key, value|
-        if value.include? letter
-           word_score += key
-        end
+      match = LETTER_SCORES.find do |key, value, a|
+        value.include? letter
       end
-    end
-      
-    word_score += 50 if letter_array.length == 7
 
-    word_score
+      letter_scores << match.first
+    end
+
+    letter_array.zip(letter_scores)
   end
 
   def self.score_many(list_of_words)
