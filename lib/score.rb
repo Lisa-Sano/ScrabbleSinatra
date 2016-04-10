@@ -37,32 +37,44 @@ class Score
     letter_array = word.split(//)
 
     letter_array.each do |letter|
+      # match is an array, where the first index is the key
+      # and the second index is the value from the LETTER_SCORES
+      # constant.
       match = LETTER_SCORES.find do |key, value, a|
         value.include? letter
       end
 
-      letter_scores << match.first
+      # push the key (which is the score of the letter) into the
+      # letter scores array
+      letter_scores << match.first unless match.nil?
     end
 
+    # zip together the letter array and the scores array to 
+    # create an array of arrays with matching letter and scores
     letter_array.zip(letter_scores)
   end
 
-  def self.score_many(list_of_words)
+  def self.string_processing(string_of_words)
     # remove any commas that may be separating words
     # replace with a space in case there's no space after the commas
-    list_of_words.gsub!(",", " ")
+    string_of_words.gsub!(",", " ")
+    
+    array_of_words = string_of_words.split(" ")
+  end
+
+  def self.score_many(list_of_words)
 
     # call method not_a_word? to determine whether words contain any
     # non-letter characters like punctuation or numbers
-    return "those aren't all words!" unless self.not_a_word?(list_of_words)
-    
-    array_of_words = list_of_words.split(" ")
-    word_hash = {}
+    return "those aren't all words!" unless self.not_a_word?(list_of_words.join(" "))
 
-    array_of_words.each do |word|
-      word_hash[word] = score(word)
+    score_array = []
+
+    list_of_words.each do |word|
+      score_array << score(word)
     end
 
-    word_hash
+    # return array of arrays
+    score_array
   end
 end
