@@ -30,9 +30,9 @@ class MyApp < Sinatra::Base
   end
 
   post '/score-many' do
-    @words = params["game"]["word_list"]
+    @words = Score.string_processing(params["game"]["word_list"])
     @scores = Score.score_many(@words)
-    @letter_scores = @words.split(" ").map { |word| Score.letter_score(word) }
+    @letter_scores = @words.map { |word| Score.letter_score(word) }
     erb :score_many
   end
 

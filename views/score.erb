@@ -15,8 +15,8 @@
 <% if @letter_scores %>
   <div class="breakdown">
     <% @letter_scores.each do |letter| %>
-      <span><%= letter[0] + ": " %>
-      <%= letter[1] %></span>
+      <span><%= letter[0] + ": " %></span>
+      <span class="score"><%= letter[1] %></span>
     <% end %>
   </div>
 <% end %>

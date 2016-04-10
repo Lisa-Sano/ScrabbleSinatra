@@ -12,25 +12,21 @@
       <tr>
         <th>Word</th>
         <th>Score</th>
+        <th>Breakdown</th>
       </tr>
-      <% @scores.each do |word, score| %>
+      <% @scores.each_with_index do |score, i| %>
         <tr>
-          <td><%= word %></td>
+          <td><%= @words[i] %></td>
           <td><%= score %></td>
+          <td class="many-breakdown">
+            <!-- for each word, iterate through and put both the word and the score on the page -->
+            <% @letter_scores[i].each do |pair| %>
+              <span><%= pair.first + ": " %>
+              <span class="score"><%= pair[1] %></span></span>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </table>
-  </div>
-<% end %>
-
-
-<% if @letter_scores %>
-  <div class="breakdown">
-    <% @letter_scores.each do |word| %>
-      <p><% word.each do |letter_score| %>
-        <span><%= letter_score.first + ": " %>
-        <span class="score"><%= letter_score[1] %></span></span>
-      <% end %></p>
-    <% end %>
   </div>
 <% end %>
